@@ -1,0 +1,8 @@
+com\mycompany\controle_de_estoque\Modelo\Conexao\Conexao.class
+com\mycompany\controle_de_estoque\Controle_de_Estoque.class
+com\mycompany\controle_de_estoque\Modelo\Entidades\Produto.class
+com\mycompany\controle_de_estoque\Modelo\Entidades\Categoria.class
+com\mycompany\controle_de_estoque\Modelo\Entidades\EstoqueGeral.class
+com\mycompany\controle_de_estoque\Modelo\Entidades\Movimentacao.class
+com\mycompany\controle_de_estoque\Modelo\Entidades\Usuario.class
+com\mycompany\controle_de_estoque\Modelo\Conexao\ConexaoMSQL.class
