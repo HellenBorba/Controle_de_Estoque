@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="contentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controledeestoque.ControladorTelaCategoria">
+    <ImageView fitHeight="46.0" fitWidth="73.0" layoutX="14.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@..\..\..\imagens\estoque.png" />
+   </ImageView>
+   <Label fx:id="lblMeuEstoque" accessibleText="lblMeuEstoque" layoutX="87.0" layoutY="33.0" text="MEU ESTOQUE" textFill="#210d6e">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblMovimentacoes" accessibleText="lblMovimentacoes" layoutX="817.0" layoutY="33.0" text="MOVIMENTAÇÕES" textFill="#210d6e">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblCategorias" layoutX="690.0" layoutY="33.0" text="CATEGORIAS" textFill="#210d6e">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblProdutos" accessibleText="lblProdutos" layoutX="568.0" layoutY="33.0" text="PRODUTOS" textFill="#210d6e">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label layoutX="54.0" layoutY="171.0" text="CATEGORIAS" textFill="#210d6e">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label layoutX="54.0" layoutY="225.0" text="ID da categoria" textFill="#210d6e">
+      <font>
+         <Font size="10.0" />
+      </font>
+   </Label>
+   <Label layoutX="151.0" layoutY="225.0" text="Nome" textFill="#210d6e">
+      <font>
+         <Font size="10.0" />
+      </font>
+   </Label>
+   <Label layoutX="383.0" layoutY="225.0" text="Descrição" textFill="#210d6e">
+      <font>
+         <Font size="10.0" />
+      </font>
+   </Label>
+   <Label layoutX="669.0" layoutY="225.0" text="Ref. - Baixo estoque" textFill="#210d6e">
+      <font>
+         <Font size="10.0" />
+      </font>
+   </Label>
+   <ImageView fitHeight="27.0" fitWidth="36.0" layoutX="757.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@..\..\..\imagens/lupa.png" />
+   </ImageView>
+   <TextField layoutX="54.0" layoutY="240.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="91.0" />
+   <TextField layoutX="151.0" layoutY="240.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="226.0" />
+   <TextField layoutX="383.0" layoutY="240.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="280.0" />
+   <TextField layoutX="669.0" layoutY="240.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="88.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#210d6e" height="27.0" layoutX="-8.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="1040.0" />
+   <TableView layoutX="63.0" layoutY="267.0" prefHeight="341.0" prefWidth="861.0">
+      <columns>
+         <TableColumn prefWidth="62.39999771118164" text="C1" />
+         <TableColumn prefWidth="108.0" text="C2" />
+         <TableColumn prefWidth="57.19996643066406" text="C1" />
+         <TableColumn prefWidth="75.0" text="C2" />
+      </columns>
+   </TableView>
+   <ImageView fx:id="abrirRelatorio" fitHeight="28.0" fitWidth="34.0" layoutX="888.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../imagens/imprimir.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="28.0" fitWidth="34.0" layoutX="964.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@..\..\..\imagens/fechar.png" />
+      </image>
+   </ImageView>
+   <Button fx:id="btnFecharJanela" layoutX="963.0" layoutY="26.0" mnemonicParsing="false" opacity="0.0" prefHeight="35.0" prefWidth="36.0" />
+   <Button fx:id="btnAbrirCadastroCategoria" layoutX="795.0" layoutY="225.0" mnemonicParsing="false" text="+ CATEGORIA" textFill="WHITE" />
+</Pane>
