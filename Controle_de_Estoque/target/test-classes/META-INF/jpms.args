@@ -1,4 +1,0 @@
---patch-module
-Controle_de_Estoque=_
---add-reads
-Controle_de_Estoque=ALL-UNNAMED

@@ -4,7 +4,6 @@ import com.mycompany.controle_de_estoque.Modelo.Conexao.Conexao;
 import com.mycompany.controle_de_estoque.Modelo.Conexao.ConexaoMSQL;
 import java.sql.SQLException;
 
-
 /**
  *
  * @author jully
