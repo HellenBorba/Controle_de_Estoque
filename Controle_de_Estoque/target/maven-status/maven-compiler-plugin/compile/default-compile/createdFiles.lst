@@ -1,5 +1,6 @@
 com\mycompany\controle_de_estoque\Modelo\Entidades\EstoqueGeral.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioMovimentacao.class
+com\mycompany\controle_de_estoque\Modelo\DAO\UsuarioDAO.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaMovimentacao.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorEdicaoMovimentacao.class
 com\mycompany\controle_de_estoque\Modelo\Entidades\Usuario.class

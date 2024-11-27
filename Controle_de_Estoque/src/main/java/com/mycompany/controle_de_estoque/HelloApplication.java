@@ -14,7 +14,5 @@ public class HelloApplication {
     public static void main(String[] args) throws SQLException {
         Conexao conexao = new ConexaoMSQL();
         System.out.println(conexao.obterConexao());
-        
-        ResultSet.
     }
 }
