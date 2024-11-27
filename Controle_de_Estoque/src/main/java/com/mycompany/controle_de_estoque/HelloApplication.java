@@ -9,10 +9,12 @@ import java.sql.SQLException;
  *
  * @author jully
  */
-public class Controle_de_Estoque {
+public class HelloApplication {
 
     public static void main(String[] args) throws SQLException {
         Conexao conexao = new ConexaoMSQL();
         System.out.println(conexao.obterConexao());
+        
+        ResultSet.
     }
 }
