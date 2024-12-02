@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  */
 public class TesteDAOS {
     public static void main(String[] args){
-            Usuario usuario = new Usuario(1L, "Noah");
+            Usuario usuario = new Usuario(0L, "Noah");
             
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             String mensagem = usuarioDAO.salvar(usuario);

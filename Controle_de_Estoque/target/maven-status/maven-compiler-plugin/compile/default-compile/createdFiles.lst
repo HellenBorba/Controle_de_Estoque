@@ -1,10 +1,12 @@
 com\mycompany\controle_de_estoque\Modelo\Entidades\EstoqueGeral.class
+com\mycompany\controle_de_estoque\TesteDAOS.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioMovimentacao.class
 com\mycompany\controle_de_estoque\Modelo\DAO\UsuarioDAO.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaMovimentacao.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorEdicaoMovimentacao.class
 com\mycompany\controle_de_estoque\Modelo\Entidades\Usuario.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioCategoria.class
+com\mycompany\controle_de_estoque\Modelo\DAO\ProdutoDAO.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorEdicaoProduto.class
 com\mycompany\controle_de_estoque\Modelo\Entidades\Categoria.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaEstoque.class
@@ -15,6 +17,7 @@ com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioProduto
 com\mycompany\controle_de_estoque\HelloApplication.class
 module-info.class
 com\mycompany\controle_de_estoque\Modelo\Entidades\Produto.class
+com\mycompany\controle_de_estoque\Modelo\DAO\CategoriaDAO.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorCadastroCategoria.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaCategoria.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioEstoque.class
