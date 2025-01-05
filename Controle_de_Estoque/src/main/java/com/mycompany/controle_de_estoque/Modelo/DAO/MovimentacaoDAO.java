@@ -2,38 +2,27 @@ package com.mycompany.controle_de_estoque.Modelo.DAO;
 
 import com.mycompany.controle_de_estoque.Modelo.Conexao.Conexao;
 import com.mycompany.controle_de_estoque.Modelo.Conexao.ConexaoMSQL;
-import com.mycompany.controle_de_estoque.Modelo.Entidades.Categoria;
+import com.mycompany.controle_de_estoque.Modelo.Entidades.Movimentacao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriaDAO {
+public class MovimentacaoDAO {
 
     private final Conexao conexao;
 
-    public CategoriaDAO() {
+    public MovimentacaoDAO() {
         this.conexao = new ConexaoMSQL();
     }
 
-    public String salvar(Categoria categoria) {
-        return categoria.getId() == 0L ? adicionar(categoria) : editar(categoria);
+    public String salvar(Movimentacao movimentacao) {
+        return movimentacao.getId() == 0L ? adicionar(movimentacao) : editar(movimentacao);
     }
 
-    private String adicionar(Categoria categoria) {
-        String sql = "INSERT INTO categoria(nome, descricao, ref_baixo_estoque) VALUES(?, ?, ?)";
-        
-        Categoria categoriaTemp = buscarCategoriaPeloNome(categoria.getNome());
-        
-        if(categoria.getRef_baixo_estoque() <= 20)
-        {
-         return String.format("Estoque Baixo");
-
-        }
-        if(categoriaTemp != null) {
-            return String.format("Error: %s ja existe no banco de dados", categoria.getNome());
-        }
+    private String adicionar(Movimentacao categoria) {
+        String sql = "INSERT INTO movimentacao (data_criacao, produto, quantidade, tipo_entrada) VALUES(?, ?, ?, ?)";
         
         try {
             PreparedStatement preparedStatement = conexao.obterConexao().prepareStatement(sql);
@@ -41,62 +30,60 @@ public class CategoriaDAO {
             preparedStatementSet(preparedStatement, categoria);
 
             int resultado = preparedStatement.executeUpdate();
-            return resultado == 1 ? "Categoria adicionado com sucesso." : "Nao possivel adicionar a categoria";
+            return resultado == 1 ? "Movimentacao adicionado com sucesso." : "Nao possivel adicionar a movimentacao";
         } catch (SQLException e) {
             return String.format("Error: %s", e.getMessage());
         }
     }
 
-    private String editar(Categoria categoria) {
-        String sql = "UPDATE categoria SET nome = ?, descricao = ?, ref_baixo_estoque = ? WHERE id = ?";
+    private String editar(Movimentacao movimentacao) {
+        String sql = "UPDATE movimentacao SET data_criacao = ?, produto = ?, quantidade = ?, tipo_entrada = ? WHERE id = ?";
         try {
             PreparedStatement preparedStatement = conexao.obterConexao().prepareStatement(sql);
 
-            preparedStatementSet(preparedStatement, categoria);
+            preparedStatementSet(preparedStatement, movimentacao);
 
             int resultado = preparedStatement.executeUpdate();
-            return resultado == 1 ? "Categoria editado com sucesso." : "Nao possivel editar a categoria";
+            return resultado == 1 ? "Movimentacao editado com sucesso." : "Nao possivel editar a movimentacao";
         } catch (SQLException e) {
             return String.format("Error: %s", e.getMessage());
         }
     }
 
-    private void preparedStatementSet(PreparedStatement preparedStatement, Categoria categoria) throws SQLException {
-        preparedStatement.setString(1, categoria.getNome());
-        preparedStatement.setString(2, categoria.getDescricao());
-        preparedStatement.setInt(3, categoria.getRef_baixo_estoque());
+    private void preparedStatementSet(PreparedStatement preparedStatement, Movimentacao movimentacao) throws SQLException {
+        //preparedStatement.setLocalDateTime(1, movimentacao.getData_criacao());
+        preparedStatement.setInt(2, movimentacao.getQuantidade());
 
-
-        if (categoria.getId() != 0L) {
-            preparedStatement.setLong(3, categoria.getId());
+        if (movimentacao.getId() != 0L) {
+            preparedStatement.setLong(3, movimentacao.getId());
         }
     }
 
-    public List<Categoria> todasCategorias() {
-        String sql = "SELECT * FROM categoria";
-        List<Categoria> categorias = new ArrayList<>();
+    public List<Movimentacao> todasCategorias() {
+        String sql = "SELECT * FROM movimentacao";
+        List<Movimentacao> movimentacao = new ArrayList<>();
 
         try {
             ResultSet result = conexao.obterConexao().prepareStatement(sql).executeQuery();
 
             while (result.next()) {
-                categorias.add(getCategoria(result));
+               // movimentacao.add(getMovimentacao(result));
             }
         } catch (SQLException e) {
             System.out.println(String.format("Error: %s", e.getMessage()));
         }
 
-        return categorias;
+        return movimentacao;
     }
 
-    public Categoria buscarCategoriaPeloId(Long id) {
+    public Movimentacao buscarCategoriaPeloId(Long id) {
         String sql = String.format("SELECT * FROM categoria WHERE id = %d", id);
         try {
             
             ResultSet result = conexao.obterConexao().prepareStatement(sql).executeQuery();
 
             if (result.next()) {
-                return getCategoria(result);
+                //return getCategoria(result);
             }
         } catch (SQLException e) {
             System.out.println(String.format("Error: %s", e.getMessage()));
@@ -104,7 +91,7 @@ public class CategoriaDAO {
 
         return null;
     }
-    
+    /*
     public Categoria buscarCategoriaPeloNome(String nome) {
         String sql = String.format("SELECT * FROM categoria WHERE nome = '%s'", nome);
         try {
@@ -119,7 +106,7 @@ public class CategoriaDAO {
 
         return null;
     }
-    
+    */
     public String deleteCategoriaPeloId(Long id) {
         String sql = String.format("DELETE FROM categoria WHERE id = %d", id);
         try {
@@ -137,16 +124,15 @@ public class CategoriaDAO {
             return String.format("Error: %s", e.getMessage());
         }
     }
-
+/*
     private Categoria getCategoria(ResultSet result) throws SQLException {
         Categoria categoria = new Categoria();
 
         categoria.setId(result.getLong("id"));
         categoria.setNome(result.getString("nome"));
         categoria.setDescricao(result.getString("descricao"));
-        categoria.setRef_baixo_estoque(result.getInt("ref_baixo_estoque"));
 
         return categoria;
     }
-
+*/
 }

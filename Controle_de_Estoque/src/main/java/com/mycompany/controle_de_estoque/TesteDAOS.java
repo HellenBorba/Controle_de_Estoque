@@ -4,20 +4,24 @@
  */
 package com.mycompany.controle_de_estoque;
 
-import com.mycompany.controle_de_estoque.Modelo.DAO.UsuarioDAO;
-import com.mycompany.controle_de_estoque.Modelo.Entidades.Usuario;
-import java.time.LocalDateTime;
+import com.mycompany.controle_de_estoque.Modelo.DAO.CategoriaDAO;
+import com.mycompany.controle_de_estoque.Modelo.Entidades.Categoria;
+import com.mycompany.controle_de_estoque.Modelo.Entidades.Produto;
+
 
 /**
  *
  * @author jully
  */
-public class TesteDAOS {
+public class TesteDAOS{
+    
     public static void main(String[] args){
-            Usuario usuario = new Usuario(0L, "Noah");
             
-            UsuarioDAO usuarioDAO = new UsuarioDAO();
-            String mensagem = usuarioDAO.salvar(usuario);
+            Categoria categoria =  new Categoria(0L, "BlusasM", "Conjunto de blusas", 50);
+            CategoriaDAO categoriaDAO = new CategoriaDAO();
+            String mensagem = categoriaDAO.salvar(categoria);
             System.out.println(mensagem);
+
 }
+
 }

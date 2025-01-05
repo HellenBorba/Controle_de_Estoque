@@ -11,6 +11,7 @@ com\mycompany\controle_de_estoque\View\Controladores\ControladorEdicaoProduto.cl
 com\mycompany\controle_de_estoque\Modelo\Entidades\Categoria.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaEstoque.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorCadastroMovimentacao.class
+com\mycompany\controle_de_estoque\Modelo\DAO\MovimentacaoDAO.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorCadastroProduto.class
 com\mycompany\controle_de_estoque\Modelo\Conexao\ConexaoMSQL.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioProduto.class
@@ -23,6 +24,7 @@ com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaCategoria.cl
 com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioEstoque.class
 com\mycompany\controle_de_estoque\Modelo\Conexao\Conexao.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorEdicaoCategoria.class
+com\mycompany\controle_de_estoque\View\Controladores\NewInterface.class
 com\mycompany\controle_de_estoque\Modelo\Entidades\Movimentacao.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorProdutoDesativado.class
 com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaProduto.class

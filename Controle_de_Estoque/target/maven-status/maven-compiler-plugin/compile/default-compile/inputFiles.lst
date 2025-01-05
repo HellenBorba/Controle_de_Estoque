@@ -5,12 +5,14 @@ C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaMovimentacao.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\Modelo\DAO\UsuarioDAO.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\Modelo\DAO\CategoriaDAO.java
+C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\Modelo\DAO\MovimentacaoDAO.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\ControladorEdicaoMovimentacao.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\Modelo\DAO\ProdutoDAO.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioCategoria.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\ControladorRelatorioProduto.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\ControladorTelaCategoria.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\Modelo\Conexao\Conexao.java
+C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\NewInterface.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\HelloApplication.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\Modelo\Conexao\ConexaoMSQL.java
 C:\Users\jully\Desktop\Hellen\Faculdade\Projeto_ProcessosProjetosTI\Controle_de_Estoque\Controle_de_Estoque\src\main\java\com\mycompany\controle_de_estoque\View\Controladores\ControladorCadastroMovimentacao.java

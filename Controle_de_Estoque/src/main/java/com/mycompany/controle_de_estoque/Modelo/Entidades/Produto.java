@@ -1,7 +1,5 @@
 package com.mycompany.controle_de_estoque.Modelo.Entidades;
 
-import java.math.BigDecimal;
-
 /**
  *
  * @author jully
@@ -9,19 +7,19 @@ import java.math.BigDecimal;
 public class Produto {
     private long id;
     private String nome;
-    private BigDecimal preco;
+    private int preco;
     private int quantidade;
     private Categoria categoria;
 
-    public Produto() {
-    }
-
-    public Produto(long id, String nome, BigDecimal preco, int quantidade, Categoria categoria) {
+    public Produto(long id, String nome, Categoria categoria, int quantidade, int preco) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
         this.categoria = categoria;
+    }
+
+    public Produto() {
     }
 
     public long getId() {
@@ -40,11 +38,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public BigDecimal getPreco() {
+    public Integer getPreco() {
         return preco;
     }
 
-    public void setPreco(BigDecimal preco) {
+    public void setPreco(Integer preco) {
         this.preco = preco;
     }
 

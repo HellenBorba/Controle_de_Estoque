@@ -1,26 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.controle_de_estoque.Modelo.DAO;
 
 import com.mycompany.controle_de_estoque.Modelo.Conexao.Conexao;
 import com.mycompany.controle_de_estoque.Modelo.Conexao.ConexaoMSQL;
 import com.mycompany.controle_de_estoque.Modelo.Entidades.Categoria;
 import com.mycompany.controle_de_estoque.Modelo.Entidades.Produto;
-import com.mycompany.controle_de_estoque.Modelo.Entidades.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author quitumba
- */
 public class ProdutoDAO {
     
     private final Conexao conexao;
@@ -35,7 +24,7 @@ public class ProdutoDAO {
     }
 
     private String adicionar(Produto produto) {
-        String sql = "INSERT INTO produto(nome, preco, categoria_id, quantidade, usuario_id) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO produto(id, nome, preco, categoria_id, quantidade) VALUES (?, ?, ?, ?, ?)";
         
         Produto produtoTemp = buscarProdutoPeloNome(produto.getNome());
         
@@ -58,7 +47,7 @@ public class ProdutoDAO {
     }
 
     private String editar(Produto produto) {
-        String sql = "UPDATE produto SET nome = ?, preco  = ?, categoria_id  = ?, quantidade  = ?, usuario_id  = ? WHERE id  = ?";
+        String sql = "UPDATE produto SET nome = ?, preco  = ?, categoria_id  = ?, quantidade  = ? WHERE id  = ?";
         try {
             PreparedStatement preparedStatement = conexao.obterConexao().prepareStatement(sql);
             
@@ -73,13 +62,13 @@ public class ProdutoDAO {
         }
     }
     
-    public String actualizarQuantidade(Long idProduto, Integer quantidade, Long usuarioId) {
-        String sql = "UPDATE produto SET quantidade = ?, usuario_id = ? WHERE id  = ?";
+    public String actualizarQuantidade(Long idProduto, Integer quantidade) {
+        String sql = "UPDATE produto SET quantidade = ? WHERE id  = ?";
+        System.out.println("Venda: " + idProduto + "QTD: " +quantidade);
         try {
             PreparedStatement preparedStatement = conexao.obterConexao().prepareStatement(sql);
             
             preparedStatement.setInt(1, quantidade);
-            preparedStatement.setLong(2, usuarioId);
             preparedStatement.setLong(3, idProduto);
             
             int resultado = preparedStatement.executeUpdate();
@@ -94,7 +83,7 @@ public class ProdutoDAO {
 
     private void preparedStatementSet(PreparedStatement preparedStatement, Produto produto) throws SQLException {
         preparedStatement.setString(1, produto.getNome());
-        preparedStatement.setBigDecimal(3, produto.getPreco());
+        preparedStatement.setInt(3, produto.getPreco());
         preparedStatement.setLong(4, produto.getCategoria().getId());
         preparedStatement.setInt(5, produto.getQuantidade());
         
@@ -103,7 +92,7 @@ public class ProdutoDAO {
     }
     
     public List<Produto> todosProdutos() {
-        String sql = "SELECT * FROM produto p, categoria c, usuario u WHERE p.categoria_id = c.id AND p.usuario_id = u.id";
+        String sql = "SELECT * FROM produto p, categoria c";
         List<Produto> produtos = new ArrayList<>();
         try {
             ResultSet result = conexao.obterConexao().prepareStatement(sql).executeQuery();
@@ -119,7 +108,7 @@ public class ProdutoDAO {
     }
     
     public Produto buscarProdutoPeloId(Long id) {
-        String sql = String.format("SELECT * FROM produto p, categoria c, usuario u WHERE p.categoria_id = c.id AND p.usuario_id = u.id AND p.id = %d", id);
+        String sql = String.format("SELECT * FROM produto p, categoria c", id);
         
         try {
             ResultSet result = conexao.obterConexao().prepareStatement(sql).executeQuery();
@@ -134,7 +123,7 @@ public class ProdutoDAO {
     }
     
     public List<Produto> buscarProdutosPeloCategoria(String categoria) {
-        String sql = String.format("SELECT * FROM produto p, categoria c, usuario u WHERE p.categoria_id = c.id AND p.usuario_id = u.id AND c.nome = '%s'", categoria);
+        String sql = String.format("SELECT * FROM produto p, categoria c", categoria);
         List<Produto> produtos = new ArrayList<>();
         
         try {
@@ -150,7 +139,7 @@ public class ProdutoDAO {
     }
     
     public Produto buscarProdutoPeloNome(String nome) {
-        String sql = String.format("SELECT * FROM produto p, categoria c, usuario u WHERE p.categoria_id = c.id AND p.usuario_id = u.id AND p.nome = '%s'", nome);
+        String sql = String.format("SELECT * FROM produto p, categoria c", nome);
         
         try {
             ResultSet result = conexao.obterConexao().prepareStatement(sql).executeQuery();
@@ -167,17 +156,14 @@ public class ProdutoDAO {
     private Produto getProduto(ResultSet result) throws SQLException {
         Produto produto = new Produto();
         Categoria categoria = new Categoria();
-        Usuario usuario = new Usuario();
         
         categoria.setId(result.getLong("c.id"));
         categoria.setNome(result.getString("c.nome"));
-        
-        usuario.setId(result.getLong("u.id"));
-        usuario.setNome(result.getString("u.nome"));
-        
+        categoria.setDescricao(result.getString("c.descricao"));
+                
         produto.setId(result.getLong("p.id"));
         produto.setNome(result.getString("p.nome"));
-        produto.setPreco(result.getBigDecimal("p.preco"));
+        produto.setPreco(result.getInt("p.preco"));
         produto.setQuantidade(result.getInt("p.quantidade"));
         produto.setCategoria(categoria);
         

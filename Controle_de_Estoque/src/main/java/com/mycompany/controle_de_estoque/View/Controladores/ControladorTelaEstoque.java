@@ -14,7 +14,7 @@ import java.io.IOException;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 
-public class ControladorTelaEstoque {
+public class ControladorTelaEstoque implements NewInterface {
 
     @FXML
     private ImageView abrirRelatorio;
@@ -41,6 +41,7 @@ public class ControladorTelaEstoque {
     private ImageView imageView;
 
     @FXML
+    @Override
     public void initialize() {
         btnFecharJanela.setOnMouseClicked(event -> fecharJanela());
         abrirRelatorio.setOnMouseClicked(event -> abrirRelatorio());
@@ -50,6 +51,7 @@ public class ControladorTelaEstoque {
         lblMovimentacoes.setOnMouseClicked(event -> carregarTela("TelaMovimentacao.fxml"));
     }
 
+    @Override
     public void abrirRelatorio() {
         try {
             // Carregar o arquivo FXML que vai sobrepor a tela atual
@@ -67,6 +69,7 @@ public class ControladorTelaEstoque {
             e.printStackTrace();
         }
     }
+    @Override
     public void carregarTela(String fxmlFile) {
         try {
             FXMLLoader telaAtual = new FXMLLoader(getClass().getResource("/telas/" + fxmlFile));
@@ -79,6 +82,7 @@ public class ControladorTelaEstoque {
             e.printStackTrace();
         }
     }
+    @Override
     public void fecharJanela() {
         Stage stage = (Stage) btnFecharJanela.getScene().getWindow();
         stage.close();
